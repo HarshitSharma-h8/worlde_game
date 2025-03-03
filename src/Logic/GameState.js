@@ -36,7 +36,7 @@ export const initialState = () => {
   return {
     rows: Array(rowsNum).fill(Array(colsNum).fill(initialCellState())),
     letters: Array(26).fill(CELL_STATE.default),
-    gameOver: true,
+    gameOver: false,
     randomWord: getRandomWord(),
     currentRow: 0,
     currentCol: 0,
