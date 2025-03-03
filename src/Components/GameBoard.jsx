@@ -13,7 +13,7 @@ const GameBoard = ({rows}) => {
                 disabled={true}
                 className={`${cell.state.cellClassName}   w-[50px] h-[50px] m-1 rounded-sm`}
                 >
-                  <strong className="text-white dark:text-black">{cell.letter || " "}</strong>
+                  <strong className="text-white dark:text-black">{cell.letter || "_"}</strong>
                 </button>
               ))
             }

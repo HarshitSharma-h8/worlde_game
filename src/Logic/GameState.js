@@ -1,3 +1,5 @@
+import { getRandomWord } from "./Words";
+
 const rowsNum = 6;
 const colsNum = 5;
 const CELL_STATE = {
@@ -31,7 +33,32 @@ export const initialState = ()=>{
        rows : Array(rowsNum).fill(Array(colsNum).fill(initialCellState())),
        letters : Array(26).fill(CELL_STATE.default),
        gameOver : false,
+       randomWord : getRandomWord(),
+       currentRow : 0,
+       currentCol : 0,
     };
+}
+
+export function gameStateAfter_letterPressed(letter, gameState) {
+    if(gameState.gameOver || gameState.currentCol == colsNum){
+        return gameState;
+    }
+    const newRows = JSON.parse(JSON.stringify(gameState.rows))
+    newRows[gameState.currentRow][gameState.currentCol] = {
+        ...newRows[gameState.currentRow][gameState.currentCol],
+        letter : letter
+    }
+    return {
+        ...gameState,
+        rows : newRows,
+        currentCol : gameState.currentCol+1,
+    }
+}
+export function gameStateAfter_enterPressed( gameState) {
+    return gameState
+}
+export function gameStateAfter_backspacePressed(gameState) {
+    return gameState
 }
 
 export function getIndexOfLetter(letter){
