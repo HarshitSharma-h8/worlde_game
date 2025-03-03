@@ -1,14 +1,23 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import ThemeSwitcher from "./Components/ThemeSwitcher";
 import WordleMainComponent from "./Components/WordleMainComponent";
+import Header from "./Components/Header";
+import RulesCard from "./Components/RulesCard";
 
 const App = () => {
+  const [showCard, setShowCard] = useState(false);
+
+  useEffect(() => {
+    setShowCard(true); // Show modal when user arrives
+  }, []);
   return (
     <>
-      <div className="dark:bg-dark h-[100vh] w-[100vh]">
-        <h1 className="text-5xl text-green-400 uppercase">Wordle</h1>
-        <ThemeSwitcher />
-        <WordleMainComponent />
+      {showCard && <RulesCard onClose={() => setShowCard(false)}/>}
+      <div className="h-screen flex flex-col">
+        <Header />
+        <div className="dark:bg-dark flex-1 flex justify-center items-center">
+          <WordleMainComponent />
+        </div>
       </div>
     </>
   );
