@@ -13,7 +13,6 @@ Explore the live version of the project here: [Demo](https://worlde-game-git-mai
 ## Features  
 - Interactive gameplay with visual feedback on guesses.
 - Virtual keyboard for intuitive input, especially on mobile devices.
-- Daily puzzles with a new word each day.
 - Responsive design for seamless experience across devices.
 
 
