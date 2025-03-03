@@ -4,7 +4,7 @@ import { RxCross2 } from "react-icons/rx";
 const RulesCard = ({ onClose }) => {
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
-          <div className="bg-white p-6 rounded-lg shadow-lg w-96 relative">
+          <div className="bg-white p-6 rounded-lg shadow-lg w-90  sm:w-96 relative">
             <button
               className="absolute top-2 right-2 bg-red-500 text-white px-1 py-1 text-2xl rounded-lg cursor-pointer hover:scale-101 transition duration-200"
               onClick={onClose}
